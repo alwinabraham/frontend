@@ -75,7 +75,7 @@ export default function PostCard(props) {
     
     useEffect(() => {
         try {
-            socket.current = io('http://localhost:8800')
+            socket.current = io('http://54.146.251.210:8800')
             socket.current.on("notification",(data)=>{
                 if(data.userId === user.user){
                     setNotifiCount(notifiCount+1)

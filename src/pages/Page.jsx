@@ -23,7 +23,7 @@ export default function Page({user}) {
   const [onlineUsers, setOnlineUsers] = useState()
 
   useEffect(() => {
-    socket.current = io('http://localhost:8800')
+    socket.current = io('http://54.146.251.210:8800')
     socket.current.emit('login-user-add', user.user)
     socket.current.emit('get-users-count')
     socket.current.on('logged-users',(users)=>{
