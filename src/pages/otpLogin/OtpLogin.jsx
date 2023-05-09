@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import {BsFillShieldLockFill, BsTelephoneFill} from "react-icons/bs"
 import OtpInput from "otp-input-react"
 import {CgSpinner} from "react-icons/cg"
-import PhoneInput from "react-phone-input-2"
+// import PhoneInput from "react-phone-input-2"
 import "react-phone-input-2/lib/style.css"
 import {auth} from "./firebase.config"
 import {RecaptchaVerifier} from 'firebase/auth'
@@ -132,7 +132,8 @@ export default function OtpLogin() {
                         <label htmlFor='ph' className='font-bold text-x1 text-white text-center'>
                             Verify your Phone Number
                         </label>
-                        <PhoneInput country={"in"} value={ph} onChange={setPh} />
+                        {/* <PhoneInput country={"in"} value={ph} onChange={setPh} /> */}
+                        <input value={ph} onChange={()=>setPh(e.target.value)} />
                         <button onClick={handleSubmit} className='bg-emerald-600 w-full flex gap-1 items-center justify-center py-2.5 text-white rounded'>
                             {loading && <CgSpinner size={20} className="mt-1 animate-spin"/>}
                             <span>Send Code via SMS</span>
