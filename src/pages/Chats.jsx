@@ -20,7 +20,7 @@ export default function Chats() {
   const socket = useRef()
   
   useEffect(() => {
-    socket.current = io('http://54.146.251.210:8800')
+    socket.current = io('https://alwo.online:8800')
     socket.current.emit('new-user-add', user.user)
     socket.current.on('get-users',(users)=>{
       setOnlineUsers(users);

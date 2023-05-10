@@ -20,7 +20,7 @@ const AdminDashboard = () => {
   const socket = useRef()
 
   useEffect(() => {
-    socket.current = io('http://54.146.251.210:8800')
+    socket.current = io('https://alwo.online:8800')
     socket.current.emit('get-users-count')
     socket.current.on('users-Count',(count)=>{
       setOnlineUsers(count);
